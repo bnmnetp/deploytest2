@@ -884,7 +884,14 @@ function createScratchActivecode() {
 }
 
 function toggleScratchActivecode() {
-    var divid = "ac_modal_" + document.URL.split('#')[0].split('static')[1].split('?')[0].replaceAll('/', '').replace('.html', '');
+    var bforeanchor = document.URL.split('#')[0]
+    var suffix = 'index'
+    if (bforeanchor.indexOf('static') > 0) {
+        suffix = bforeanchor.split('static')[1].split('?')[0].replaceAll('/', '').replace('.html', '');
+    } else {
+        suffix = bforeanchor.split('?')[0].replaceAll('/', '').replace('.html', '');
+    }
+    var divid = "ac_modal_" + suffix;
     var div = $("#" + divid);
 
     div.modal('toggle');
