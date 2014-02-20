@@ -836,6 +836,7 @@ function createScratchActivecode() {
         divid = divid.split('?')[0];  // remove any query string (e.g ?lastPosition)        
     }
     divid = divid.replaceAll(':','')
+    divid = divid.replaceAll('.','')    
     divid = divid.replaceAll('/', '').replace('.html', '');
     console.log(divid)
     // generate the HTML
@@ -896,6 +897,7 @@ function toggleScratchActivecode() {
     } else {
         suffix = bforeanchor.split('?')[0].replaceAll('/', '').replace('.html', '');
         suffix = suffix.replaceAll(':','')
+        suffix = suffix.replaceAll('.','')
     }
     console.log(suffix)
     var divid = "ac_modal_" + suffix;
