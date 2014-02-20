@@ -836,8 +836,9 @@ function createScratchActivecode() {
         divid = divid.split('?')[0];  // remove any query string (e.g ?lastPosition)        
     }
     divid = divid.replaceAll(':','')
-    divid = divid.replaceAll('.','')    
     divid = divid.replaceAll('/', '').replace('.html', '');
+    divid = divid.replaceAll('.','')    
+
     console.log(divid)
     // generate the HTML
     var html = '<div id="ac_modal_' + divid + '" class="modal fade">' +
