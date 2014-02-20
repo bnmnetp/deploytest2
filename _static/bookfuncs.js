@@ -829,7 +829,11 @@ function createScratchActivecode() {
     // use the URL to assign a divid - each page should have a unique Activecode block id.
     // Remove everything from the URL but the course and page name
     var divid = document.URL.split('#')[0];
-    divid = divid.split('static')[1];
+    if (divid.indexOf('static') > 0 ) {
+        divid = divid.split('static')[1];
+    } else {
+        divid = divid.split('runestone')[1];
+    }
     divid = divid.split('?')[0];  // remove any query string (e.g ?lastPosition)
     divid = divid.replaceAll('/', '').replace('.html', '');
 
