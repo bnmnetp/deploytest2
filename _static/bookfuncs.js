@@ -832,9 +832,10 @@ function createScratchActivecode() {
     if (divid.indexOf('static') > 0 ) {
         divid = divid.split('static')[1];
     } else {
-        divid = divid.split('//')[1];
+//        divid = divid.split('//')[1];
+        divid = divid.split('?')[0];  // remove any query string (e.g ?lastPosition)        
     }
-    divid = divid.split('?')[0];  // remove any query string (e.g ?lastPosition)
+    divid = divid.replaceAll(':','')
     divid = divid.replaceAll('/', '').replace('.html', '');
 
     // generate the HTML
@@ -894,6 +895,7 @@ function toggleScratchActivecode() {
         suffix = bforeanchor.split('static')[1].split('?')[0].replaceAll('/', '').replace('.html', '');
     } else {
         suffix = bforeanchor.split('?')[0].replaceAll('/', '').replace('.html', '');
+        suffix = suffix.replaceAll(':','')
     }
     var divid = "ac_modal_" + suffix;
     var div = $("#" + divid);
