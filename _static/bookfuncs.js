@@ -837,7 +837,7 @@ function createScratchActivecode() {
     }
     divid = divid.replaceAll(':','')
     divid = divid.replaceAll('/', '').replace('.html', '');
-
+    console.log(divid)
     // generate the HTML
     var html = '<div id="ac_modal_' + divid + '" class="modal fade">' +
         '  <div class="modal-dialog scratch-ac-modal">' +
@@ -897,6 +897,7 @@ function toggleScratchActivecode() {
         suffix = bforeanchor.split('?')[0].replaceAll('/', '').replace('.html', '');
         suffix = suffix.replaceAll(':','')
     }
+    console.log(suffix)
     var divid = "ac_modal_" + suffix;
     var div = $("#" + divid);
 
